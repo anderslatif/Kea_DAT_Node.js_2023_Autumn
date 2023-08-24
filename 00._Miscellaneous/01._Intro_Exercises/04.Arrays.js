@@ -3,7 +3,7 @@
 // --------------------------------------
 // Exercise 1 - Array Positioning
 
-const letters = ["a","b","c"];
+const letters = ["a", "b", "c"];
 // show b in the console 
 
 
@@ -54,7 +54,7 @@ const diet = ["tomato", "cucumber", "rocket"];
 // --------------------------------------
 // Exercise 7 - For loop
 
-const lettersExpanded = ["a","b","c", "d", "e", "f", "g", "h"];
+const lettersExpanded = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
 // log every second char in the array starting from b
 
