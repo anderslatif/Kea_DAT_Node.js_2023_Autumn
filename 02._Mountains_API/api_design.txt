@@ -1,0 +1,5 @@
+Mountains CRUD API
+
+GET     /mountains
+GET     /mountains/{id} 
+
