@@ -22,12 +22,21 @@
     
     <h3>This is now deployed!</h3>
 
+    <h3 id="welcomeMessage"></h3>
 
+    <a href="/secondPage">Second Page</a>
 
     <script>
-        setTimeout(() => {
-            console.log("hello");
-        }, 1000);
+        // assignment personalize the message so that it greets the user by their name
+
+        fetch("/welcomeMessage?user=Anders")
+        .then((response) => response.json())
+        .then((result) => {
+            const welcomeMessageHeader = document.getElementById("welcomeMessage");
+            welcomeMessageHeader.innerText = result.data;
+        });
+
+
     </script>
 </body>
 </html>
