@@ -1,0 +1,6 @@
+/* 
+
+assignment Solve the dinosaur assignment so that we can get dino info
+You should only change 1 line 
+
+*/
