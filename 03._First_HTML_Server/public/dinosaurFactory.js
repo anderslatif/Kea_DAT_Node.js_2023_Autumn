@@ -1,9 +1,20 @@
 const extinctDinosaurs = ["🦕", "🦖", "🦴", "🍗"];
 
-function getExtinctDinosaurs() {
+
+export function getExtinctDinosaurs() {
     return extinctDinosaurs;
 }
 
-function addExtinctDinosaur(extinctDinosaur) {
+export function addExtinctDinosaur(extinctDinosaur) {
     extinctDinosaurs.push(extinctDinosaur);
 }
+
+// export default {
+//     getExtinctDinosaurs,
+//     addExtinctDinosaur
+// };
+
+// export {
+//     getExtinctDinosaurs,
+//     addExtinctDinosaur
+// };

@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.static("public"));
 
-const welcomeMessageUtil = require("./util/welcomeMessageUtil.js");
+const { getWelcomeMessage } = require("./util/welcomeMessageUtil.js");
 
 
 app.get("/", (req, res) => {
@@ -20,7 +20,7 @@ app.get("/secondPage", (req, res) => {
 
 app.get("/welcomeMessage", (req, res) => {
     const clientName = req.query.user;
-    const welcomeMessage = welcomeMessageUtil.getWelcomeMessage(clientName);
+    const welcomeMessage = getWelcomeMessage(clientName);
     res.send({ data: welcomeMessage })
 });
 
