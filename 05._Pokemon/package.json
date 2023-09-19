@@ -1,0 +1,33 @@
+{
+  "name": "pokemon",
+  "version": "0.0.1",
+  "description": "Pokemon website for lovers of pokemon",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anderslatif/Kea_DAT_Node.js_2023_Autumn.git"
+  },
+  "keywords": [
+    "pokemon",
+    "pokemon",
+    "battle",
+    "website",
+    "node",
+    "express",
+    "node.js"
+  ],
+  "author": "Anders Latif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anderslatif/Kea_DAT_Node.js_2023_Autumn/issues"
+  },
+  "homepage": "https://github.com/anderslatif/Kea_DAT_Node.js_2023_Autumn#readme",
+  "dependencies": {
+    "epxress": "^0.0.1-security",
+    "express": "^4.18.2"
+  }
+}
