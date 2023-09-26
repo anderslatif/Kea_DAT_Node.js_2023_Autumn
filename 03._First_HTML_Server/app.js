@@ -32,6 +32,22 @@ app.get("/doorman/:key", (req, res) => {
     res.send({ data: "You have not provided the correct key" });
 });
 
+app.get("/proxyserver", (req, res) => {
+    // task fetch http://www.google.com
+    // task: Then serve it 
+    // fetch("http://www.google.com")
+    // .then((response) => response.text())
+    // .then((result) => res.send(result));
+    fetch("https://google.com")
+    .then(response => response.arrayBuffer())
+    .then(buffer => {
+        const decoder = new TextDecoder('iso-8859-1');
+        const text = decoder.decode(buffer);
+        res.send(text);
+
+    });
+});
+
 
 // ======================================================
 
