@@ -24,6 +24,14 @@ app.get("/welcomeMessage", (req, res) => {
     res.send({ data: welcomeMessage })
 });
 
+app.get("/doorman/:key", (req, res) => {
+    if (req.params.key === "sesameopenup") {
+        // return res.send({ data: "You have provided the correct key" });
+        return res.redirect("/welcomeMessage");
+    }
+    res.send({ data: "You have not provided the correct key" });
+});
+
 
 // ======================================================
 
