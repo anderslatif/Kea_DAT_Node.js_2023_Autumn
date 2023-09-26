@@ -24,7 +24,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`)
 }))
 .then((result) => {
     const nameHeader = document.getElementById("pokemon-name");
-    nameHeader.innerText = result.name;
+    nameHeader.innerText = result.name.charAt(0).toUpperCase() + result.name.slice(1);
 
     const imageWrapperDiv = document.getElementById("image-wrapper");
     imageWrapperDiv.innerHTML = `
