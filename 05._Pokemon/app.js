@@ -7,19 +7,35 @@ import path from "path";
 
 import { randomIntFromInterval } from "./util/randomUtil.js";
 
+// ====================== Read Pages  ======================
+
+import fs from "fs";
+
+const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString();
+const footer = fs.readFileSync("./public/components/footer/footer.html").toString();
+
+const frontpage = fs.readFileSync("./public/pages/frontpage/frontpage.html").toString();
+const frontpagePage = navbar + frontpage + footer;
+
+const battle = fs.readFileSync("./public/pages/battle/battle.html").toString();
+const battlePage = navbar + battle + footer;
+
+const contact = fs.readFileSync("./public/pages/contact/contact.html").toString();
+const contactPage = navbar + contact + footer;
 
 // ====================== HTML  ======================
 
+
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("./public/frontpage/frontpage.html"));
+    res.send(frontpagePage);
 });
 
 app.get("/battle", (req, res) => {
-    res.sendFile(path.resolve("./public/battle/battle.html"));
+    res.send(battlePage);
 });
 
 app.get("/contact", (req, res) => {
-    res.sendFile(path.resolve("./public/contact/contact.html"));
+    res.send(contactPage);
 });
 
 // ====================== Routes  ======================
