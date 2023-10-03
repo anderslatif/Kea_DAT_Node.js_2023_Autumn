@@ -3,25 +3,11 @@ const app = express();
 
 app.use(express.static("public"));
 
-import path from "path";
-
 import { randomIntFromInterval } from "./util/randomUtil.js";
 
 // ====================== Read Pages  ======================
 
-import fs from "fs";
-
-const navbar = fs.readFileSync("./public/components/navbar/navbar.html").toString();
-const footer = fs.readFileSync("./public/components/footer/footer.html").toString();
-
-const frontpage = fs.readFileSync("./public/pages/frontpage/frontpage.html").toString();
-const frontpagePage = navbar + frontpage + footer;
-
-const battle = fs.readFileSync("./public/pages/battle/battle.html").toString();
-const battlePage = navbar + battle + footer;
-
-const contact = fs.readFileSync("./public/pages/contact/contact.html").toString();
-const contactPage = navbar + contact + footer;
+import { frontpagePage, battlePage, contactPage } from "./util/preparePages.js";
 
 // ====================== HTML  ======================
 
