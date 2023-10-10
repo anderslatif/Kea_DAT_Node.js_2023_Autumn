@@ -3,10 +3,28 @@
     export let onEatCookie;
     export let onShowLove;
 
+    import { fridgeMessages } from "../../store/fridgeMessages";
+
+    let customFridgeMessage = "";
+    
+    function submitFridgeMessage() {
+        fridgeMessages.set([...$fridgeMessages, customFridgeMessage]);
+        // fridgeMessages.update((storeValue) => {
+        //     storeValue.push(customFridgeMessage);
+        //     return storeValue;
+        //     return [...$fridgeMessages, customFridgeMessage];
+        // });
+
+        customFridgeMessage = "";
+    }
 </script>
 
 <button on:click={onEatCookie}>Eat Cookie</button>
 <button on:click={() => onShowLove(child.name)}>💚</button>
+<br>
+
+<input placeholder="Write a fridge message" bind:value={customFridgeMessage}>
+<button on:click={submitFridgeMessage}>Submit fridge message</button>
 
 <div 
     class:is-girl={child.isGirl}

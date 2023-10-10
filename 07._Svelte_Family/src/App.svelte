@@ -21,9 +21,9 @@
 
 </script>
 
+<h4>Welcome message above the door</h4>
 
 <Home>
-    <h4>Welcome message above the door</h4>
 
     <Parent name={parents[0]} myChildren={children} />
     <Parent name={parents[1]} myChildren={children} />
