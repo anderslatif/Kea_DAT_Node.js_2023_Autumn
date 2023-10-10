@@ -25,9 +25,8 @@
 <Home>
     <h4>Welcome message above the door</h4>
 
-    <!-- task solve below but without looping -->
-    <Parent name={parents[0]} children={children}} />
-    <Parent name={parents[1]} children={children}} />
+    <Parent name={parents[0]} children={children} />
+    <Parent name={parents[1]} children={children} />
 
     <!-- {#each parents as parentName}
         <Parent name={parentName} children={children} />
