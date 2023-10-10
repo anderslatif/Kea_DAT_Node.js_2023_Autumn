@@ -1,7 +1,12 @@
 <script>
     export let child;
+    export let onEatCookie;
+    export let onShowLove;
 
 </script>
+
+<button on:click={onEatCookie}>Eat Cookie</button>
+<button on:click={() => onShowLove(child.name)}>💚</button>
 
 <div 
     class:is-girl={child.isGirl}
