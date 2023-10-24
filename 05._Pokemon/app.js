@@ -3,6 +3,8 @@ const app = express();
 
 app.use(express.static("public"));
 
+app.use(express.urlencoded({ extended: true }));
+
 import { randomIntFromInterval } from "./util/randomUtil.js";
 
 // ====================== Read Pages  ======================
@@ -61,7 +63,7 @@ app.get("/battlepokemon", (req, res) => {
 });
 
 app.post("/contact", (req, res) => {
-    console.log("OK Thanks for the message");
+    console.log("OK Thanks for the message", req.body);
     res.redirect("/");
 });
 
