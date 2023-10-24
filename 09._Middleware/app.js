@@ -8,7 +8,6 @@ const allRoutesRateLimiter = rateLimit({
 	limit: 200, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
 	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
-	// store: ... , // Use an external store for consistency across multiple server instances.
 });
 
 app.use(allRoutesRateLimiter);
@@ -22,14 +21,6 @@ const authRateLimiter = rateLimit({
 });
 
 app.use("/auth", authRateLimiter);
-
-app.post("/auth/login", (req, res) => {
-    res.send({});
-});
-
-app.post("/auth/signup", (req, res) => {
-    res.send({});
-});
 
 
 function doorman(req, res, next) {
@@ -50,8 +41,12 @@ function ipLogger(req, res, next) {
 }
 app.use("/room", ipLogger);
 
-import RoomsRouter from "./routers/roomsRouter.js";
-app.use(RoomsRouter);
+import authRouter from "./routers/authRouter.js";
+app.use(authRouter);
+import furnitureRouter from "./routers/furnituresRouter.js";
+app.use(furnitureRouter);
+import roomsRouter from "./routers/roomsRouter.js";
+app.use(roomsRouter);
 
 
 
