@@ -2,16 +2,6 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function escapeHTML(string) {
-    if (!string) return "";
-
-    return string.replaceAll(`&`, "&amp;")
-        .replaceAll(`>`, "&gt;")
-        .replaceAll(`<`, "&lt;")
-        .replaceAll(`"`, "&quot;")
-        .replaceAll(`/`, "&#039;");
-}
-
 const randomPokemonId = randomIntFromInterval(1, 151);
 
 
