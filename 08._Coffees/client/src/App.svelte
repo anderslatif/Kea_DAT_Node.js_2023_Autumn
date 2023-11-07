@@ -4,6 +4,8 @@
   import CoffeeOverview from "./pages/CoffeeOverview/CoffeeOverview.svelte";
   import RegisterCoffeeLover from "./pages/RegisterCoffeeLover/RegisterCoffeeLover.svelte";
   import WhoDatCoffeeLover from "./pages/WhoDatCoffeeLover/WhoDatCoffeeLover.svelte";
+  import RegisterCoffeeLoverSSR from "./pages/RegisterCoffeeLoverSSR/RegisterCoffeeLoverSSR.svelte";
+  import WhoDatCoffeeLoverSSR from "./pages/WhoDatCoffeeLoverSSR/WhoDatCoffeeLoverSSR.svelte";
 
 </script>
 
@@ -13,6 +15,8 @@
     <Link to="/coffeetypes">Coffee Overview</Link>
     <Link to="/registercoffeelover">Register Coffee Lover</Link>
     <Link to="/whodatcoffeelover">WhoDatCoffeeLover</Link>
+    <Link to="/registercoffeeloverssr">Register Coffee Lover SSR</Link>
+    <Link to="/whodatcoffeeloverssr">WhoDatCoffeeLover SSR</Link>
   </nav>
 
   <div>
@@ -20,6 +24,8 @@
     <Route path="/coffeetypes"><CoffeeOverview /></Route>
     <Route path="/registercoffeelover"><RegisterCoffeeLover /></Route>
     <Route path="/whodatcoffeelover"><WhoDatCoffeeLover /></Route>
+    <Route path="/registercoffeeloverssr"><RegisterCoffeeLoverSSR /></Route>
+    <Route path="/whodatcoffeeloverssr"><WhoDatCoffeeLoverSSR /></Route>
   </div>
 
 </Router>
