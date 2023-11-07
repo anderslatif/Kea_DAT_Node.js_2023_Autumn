@@ -5,6 +5,8 @@ import "dotenv/config";
 import express from "express";
 const app = express();
 
+app.use(express.json());
+
 import helmet from "helmet";
 app.use(helmet());
 
@@ -27,6 +29,8 @@ import usersRouter from "./routers/usersRouter.js";
 app.use(usersRouter);
 import coffeesRouter from "./routers/coffeesRouter.js";
 app.use(coffeesRouter);
+import coffeeLoversRouter from "./routers/coffeeLoversRouter.js";
+app.use(coffeeLoversRouter);
 
 
 const PORT = process.env.PORT || 8080;

@@ -1,15 +1,24 @@
 <script>
+    import { BASE_URL } from "../../store/global.js";
     import { navigate } from "svelte-navigator";
 
-    let coffeeLoverName = "";
+    let coffeeLoverName;
 
     async function submitCoffeLoverName() {
-        const response = await fetch("http://localhost:8080/users/" + coffeeLoverName, {
-            credentials: "include"
+        const response = await fetch($BASE_URL + "/api/coffeeLovers", {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ coffeeLover: coffeeLoverName })
         });
-        const result = await response.json();
-        navigate("/whodatcoffeelover")
+        // const result = await response.json();
+        if (response.status === 200) {
+            navigate("/whodatcoffeelover");
+        }
     }
+
 </script>
 
 <input bind:value={coffeeLoverName}>
