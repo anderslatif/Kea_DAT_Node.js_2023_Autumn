@@ -1,5 +1,6 @@
 <script>
     import { BASE_URL } from "../../stores/globalStore.js";
+    import { currentUser } from "../../stores/usersStore.js";
     let name;
 
 
@@ -13,7 +14,8 @@
             body: JSON.stringify({ name })
         });
         const result = await response.json();
-        console.log(result);
+        currentUser.set(result.data);
+        
     }
 </script>
 
