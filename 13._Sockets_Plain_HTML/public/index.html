@@ -9,14 +9,21 @@
     <h1>Colors</h1>
 
     <input id="color-picker" type="color">
-    <button>Choose color</button>
+    <button onclick="chooseColor()">Choose color</button>
 
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
-        // task console log the color value when the user chooses a color
+        const colorPicker = document.getElementById("color-picker");
         
+        function chooseColor() {
+            socket.emit("client-choose-color", { data: colorPicker.value });
+        }
+
+        socket.on("server-sent-color", (data) => {
+            document.body.style.backgroundColor = data.data;
+        });
     </script>
 </body>
 </html>
