@@ -6,7 +6,7 @@
 
   import { onMount } from "svelte";
 
-  onMount(async () => {
+/*   onMount(async () => {
     const currentUserLocalStorage =localStorage.getItem("currentUser");
     if (currentUserLocalStorage) {
       console.log(currentUserLocalStorage);
@@ -19,7 +19,7 @@
       localStorage.setItem("currentUser", result.data);
       currentUser.set(result.data);
     }
-  });
+  }); */
 </script>
 
 {#if !$currentUser}
