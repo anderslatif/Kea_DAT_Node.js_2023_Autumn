@@ -1,7 +1,8 @@
 <script>
-    import { io } from "socket.io-client";
+  import Colors from "./pages/Colors/Colors.svelte";
+  import Register from "./pages/Register/Register.svelte";
 
-    const socket = io("http://localhost:8080");
 </script>
 
-<h1>Colors</h1>
+<Register/>
+<Colors/>
