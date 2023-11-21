@@ -15,7 +15,7 @@
         });
         const result = await response.json();
         currentUser.set(result.data);
-        
+        localStorage.setItem("currentUser", result.data);
     }
 </script>
 
